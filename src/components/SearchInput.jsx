@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { getSuggestions } from "../server";
+import React, { useState } from "react";
+import {getSuggestions} from '../server';
 
 const SearchInput = () => {
   const [search, setSearch] = useState("");
