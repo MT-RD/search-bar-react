@@ -4,10 +4,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
+
+  const onChange = (event) => {
+    
+  };
+
   return (
     <div className="App">
       <h1>Search Bar Dropdown</h1>
-      <SearchBar />
+      <SearchBar onInputChange={onChange}/>
     </div>
   );
 }
