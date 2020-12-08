@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from 'react';
 import { getSuggestions } from '../server';
 
 const SearchBar = () => {
-  const [search, setSearch] = useState("");
+  const [search, setSearch] = useState('');
   const [responseData, setResponseData] = useState([]);
+
+  const resultRef = useRef();
+  const searchInputRef = useRef();
 
   const getSuggestion = (e) => {
     setSearch(e.target.value);
@@ -27,8 +30,26 @@ const SearchBar = () => {
           name="search"
           placeholder="search by keyword ..."
           className="form-control"
+          ref={searchInputRef}
           onChange={(e) => getSuggestion(e)}
         />
+
+        <ul id="results" className="list-group" ref={resultRef}>
+          {responseData.map((item, index) => {
+            return (
+              <button
+                type="button"
+                key={index}
+                onClick={(e) => {
+                  searchInputRef.current.value = item;
+                }}
+                className="list-group-item list-group-item-action"
+              >
+                {item}
+              </button>
+            );
+          })}
+        </ul>
 
         {responseData.length > 0
           ? responseData.map((item, index) => <p key={index}>{item}</p>)

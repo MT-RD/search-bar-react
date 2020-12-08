@@ -11,3 +11,21 @@
   /* border: solid 1px red; */
   width: 20em;
 }
+
+#results {
+  position: absolute;
+  width: inherit;
+  overflow-y: scroll;
+  height: 10em;
+  /* border-bottom: 1px #eeeeee solid; */
+  background-color: lightcoral;
+  border-radius: 0;
+}
+
+#results > button {
+  background-color: lightcoral;
+  border-radius: 0;
+  text-align: left;
+  color: #fafafa;
+  font-size: 1em;
+}
