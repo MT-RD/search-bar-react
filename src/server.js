@@ -8,7 +8,7 @@ function getRandomBool(n) {
   return Math.floor(Math.random() * maxRandomCoeff) % n === 0;
 }
 
-function getSuggestions(text) {
+export function getSuggestions(text) {
   var pre = 'pre';
   var post = 'post';
   var results = [];
